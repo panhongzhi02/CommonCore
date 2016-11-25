@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 自定义颜色 -->
+    <color name="white">#ffffff</color>
+    <color name="black">#c52a2929</color>
+    <!-- 黑色文字 -->
+    <color name="text_color">#d4292222</color>
+
+    <color name="tranBlackDark">#66000000</color>
+    <color name="tranBlackLight">#22000000</color>
+</resources>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <Button
+        android:id="@+id/download_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_normal_selector"
+        android:textColor="@color/white"
+        android:text="下载测试"/>
+
+    <Button
+        android:id="@+id/load_progress_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_normal_selector"
+        android:textColor="@color/white"
+        android:text="加载测试"/>
+
+    <com.taiji.library.ui.progressbar.NumberProgressBar
+        android:id="@+id/numberbar"
+        android:layout_width="wrap_content"
+        android:padding="20dp"
+        app:progress_current="0"
+        style="@style/NumberProgressBar_Default"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
