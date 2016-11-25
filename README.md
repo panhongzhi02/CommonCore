@@ -3,7 +3,7 @@ android项目快速开发公共依赖
 ## UI部分
 ### 基础Activity
 #### toolbar封装
-![enter description here][1]
+![测试](./images/baseactivity.png)
 - 新建Activity继承BaseActivity
 - 在activity的onCreate方法中使用如下方法设置标题栏名称
 ```java
@@ -62,6 +62,3 @@ setSupportActionBar(mToolbar);
 
 
 ### 文件下载
-
-
-  [1]: ./images/baseactivity.png "baseactivity.png"
