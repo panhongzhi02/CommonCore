@@ -3,7 +3,7 @@ android项目快速开发公共依赖
 ## UI部分
 ### 基础Activity
 #### toolbar封装
-![测试](https://github.com/panhongzhi02/CommonCore/images/baseactivity.png)
+![测试](./images/baseactivity.png)
 - 新建Activity继承BaseActivity
 - 在activity的onCreate方法中使用如下方法设置标题栏名称
 ```java
