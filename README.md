@@ -4,6 +4,7 @@ android项目快速开发公共依赖
 ### 基础Activity
 #### toolbar封装
 ![测试](./images/baseactivity.png)
+**使用方法**
 - 新建Activity继承BaseActivity
 - 在activity的onCreate方法中使用如下方法设置标题栏名称
 ```java
@@ -60,5 +61,10 @@ setSupportActionBar(mToolbar);
 ## 网络请求部分
 ### Retrofit使用封装
 
-
+## 其他常用功能
+### 二维码扫描
+**使用方法**
+![二维码扫描](./images/scan.png)
+* 继承ScanActivity，在toolbar上会有一个“扫一扫”按钮。
+* 重写onScanResult方法获取扫描结果
 ### 文件下载

@@ -25,6 +25,11 @@
 
         </activity>
 
+        <activity android:name=".activity.ScanTestActivity"
+                  android:theme="@style/Theme.Page">
+
+        </activity>
+
     </application>
 
 </manifest>
