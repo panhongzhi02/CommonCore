@@ -57,6 +57,42 @@ setSupportActionBar(mToolbar);
 #### 网络请求加载框
 
 ### TabLayout简单封装
+#### TabLayout在布局文件使用
+```xml
+    <android.support.design.widget.TabLayout
+        android:id="@+id/test_tab"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabIndicatorColor="@color/colorPrimary"
+        app:tabSelectedTextColor="@color/colorPrimary"
+        app:tabTextColor="@color/text_color"
+        app:tabBackground="@color/white">
+
+    </android.support.design.widget.TabLayout>
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/test_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/test_tab">
+
+
+    </android.support.v4.view.ViewPager>
+```
+#### TabLayout在代码中使用
+```java
+        mTabPageHelper = new TabPageHelper();
+        mTabPageHelper.add("测试页1",new Test1View(this));
+        mTabPageHelper.add("测试页2",new Test2View(this));
+
+        mTestTab.setTabMode(TabLayout.MODE_FIXED);
+        mTabPageHelper.initTab(mTestTab);
+        SimplePageAdapter adapter = new SimplePageAdapter(mTabPageHelper);
+        mTestVp.setAdapter(adapter);
+        mTestTab.setupWithViewPager(mTestVp);
+```
+#### 效果展示
+![测试](./gifs/TabLayout.gif)
 ### RecyclerView下拉刷新，滑动分页，分页组件
 * 下拉刷新使用官方组件SwipeRefreshLayout
 * RecyclerView滑动分页使用第三方自定义Adapter组件BaseRecyclerViewAdapterHelper
@@ -65,20 +101,20 @@ setSupportActionBar(mToolbar);
 #### SwipeRefreshLayout使用方法
 最外层使用SwipeRefreshLayout，将要下拉刷新的部分放到SwipeRefreshLayout内部。
 ```xml
-   <android.support.v4.widget.SwipeRefreshLayout
+   
         android:id="@+id/test_sr"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <android.support.v7.widget.RecyclerView
+        
             android:id="@+id/test_rv"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:scrollbars="none">
 
-        </android.support.v7.widget.RecyclerView>
+        
 
-    </android.support.v4.widget.SwipeRefreshLayout>
+    
 ```
 在代码中使用：
 ```java
