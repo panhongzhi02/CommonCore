@@ -23,5 +23,4 @@ public class Test1Adapter extends BaseQuickAdapter<Test>{
     protected void convert(BaseViewHolder baseViewHolder, Test test) {
         baseViewHolder.setText(R.id.test_tv,test.getId());
     }
-
 }

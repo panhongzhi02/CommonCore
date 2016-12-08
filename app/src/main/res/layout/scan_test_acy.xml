@@ -4,4 +4,38 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+    <Button
+        android:id="@+id/create_ic_qrcode_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_normal_selector"
+        android:text="生成带图标二维码"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
+    <Button
+        android:id="@+id/create_qrcode_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_normal_selector"
+        android:text="生成不带图标二维码"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
+    <Button
+        android:id="@+id/parse_qrcode_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/btn_normal_selector"
+        android:text="识别图库二维码"
+        android:textSize="20sp"
+        android:layout_gravity="center"
+        android:textColor="@color/white"/>
+
+    <ImageView
+        android:id="@+id/qrcode_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"/>
+
 </LinearLayout>

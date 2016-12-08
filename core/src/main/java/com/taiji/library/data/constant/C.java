@@ -14,7 +14,7 @@ public class C {
         /**
          * sd卡路径
          */
-        public static final String SD_PATH = "/sdcard/CubeCare/";
+        public static final String SD_PATH = "/sdcard/";
         /**
          * 基础信息存储文件名称
          */

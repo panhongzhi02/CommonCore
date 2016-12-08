@@ -31,6 +31,8 @@ public class ToolBarHelper {
      */
     private View mUserView;
 
+    private View view;
+
     private Toolbar mToolbar;
 
     private TextView title_tv;
@@ -66,11 +68,15 @@ public class ToolBarHelper {
     }
 
     private void initToolBar(){
-        View toolbar = mInflater.inflate(R.layout.toolbar,mContentView);
-        mToolbar = (Toolbar) toolbar.findViewById(R.id.tool_bar);
+        view = mInflater.inflate(R.layout.toolbar,mContentView);
+        mToolbar = (Toolbar) view.findViewById(R.id.tool_bar);
         mToolbar.setTitle("");
-        title_tv = (TextView) toolbar.findViewById(R.id.toolbar_title);
-        mLoadView = (AVLoadingIndicatorView) toolbar.findViewById(R.id.loading_view);
+        title_tv = (TextView) view.findViewById(R.id.toolbar_title);
+        mLoadView = (AVLoadingIndicatorView) view.findViewById(R.id.loading_view);
+    }
+
+    public void removeToolbar(){
+        ((ViewGroup)view).removeView(mToolbar);
     }
 
     @SuppressWarnings("ResourceType")

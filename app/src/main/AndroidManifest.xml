@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity"
-            android:theme="@style/Theme.Page">
+                  android:theme="@style/Theme.Page">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
 
@@ -21,7 +21,7 @@
                   android:theme="@style/Theme.Page"></activity>
 
         <activity android:name=".activity.UtilActivity"
-            android:theme="@style/Theme.Page">
+                  android:theme="@style/Theme.Page">
 
         </activity>
 
@@ -29,6 +29,33 @@
                   android:theme="@style/Theme.Page">
 
         </activity>
+
+        <activity android:name=".activity.WebViewActivity"
+                  android:theme="@style/Theme.Page">
+
+        </activity>
+
+        <activity android:name=".activity.MVPTestActivity"
+                  android:theme="@style/Theme.Page">
+
+        </activity>
+
+        <activity android:name=".activity.SelectPhotoActivity"
+                  android:theme="@style/Theme.Page">
+
+        </activity>
+
+        <!-- 照片浏览页面 -->
+        <activity android:name="me.iwf.photopicker.PhotoPickerActivity"
+                  android:theme="@style/Theme.Page">
+
+        </activity>
+        <!-- 照片浏览页面 -->
+        <activity android:name="me.iwf.photopicker.PhotoPagerActivity"
+                  android:theme="@style/Theme.Page">
+
+        </activity>
+
 
     </application>
 
