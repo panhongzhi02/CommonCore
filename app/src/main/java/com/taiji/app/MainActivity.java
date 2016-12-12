@@ -21,7 +21,7 @@ public class MainActivity extends BaseActivity {
     @BindView(R.id.test_vp)
     ViewPager mTestVp;
 
-    private TabPageHelper mPageHelper;
+    private TabPageHelper mTabPageHelper;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +30,13 @@ public class MainActivity extends BaseActivity {
         ButterKnife.bind(this);
         setTitle("我的android框架");
 
-        mPageHelper = new TabPageHelper();
-        mPageHelper.add("测试页1",new Test1View(this));
-        mPageHelper.add("测试页2",new Test2View(this));
+        mTabPageHelper = new TabPageHelper();
+        mTabPageHelper.add("测试页1",new Test1View(this));
+        mTabPageHelper.add("测试页2",new Test2View(this));
 
         mTestTab.setTabMode(TabLayout.MODE_FIXED);
-        mPageHelper.initTab(mTestTab);
-        SimplePageAdapter adapter = new SimplePageAdapter(mPageHelper);
+        mTabPageHelper.initTab(mTestTab);
+        SimplePageAdapter adapter = new SimplePageAdapter(mTabPageHelper);
         mTestVp.setAdapter(adapter);
         mTestTab.setupWithViewPager(mTestVp);
 
