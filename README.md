@@ -236,7 +236,8 @@ mPageHelper.setOnPageChangeListener(new PageHelper.OnPageChangeListener() {
 ![二维码扫描](./images/scan.png)
 * 继承ScanActivity，在toolbar上会有一个“扫一扫”按钮。
 * 重写onScanResult方法获取扫描结果
- #### 直接调用
+#### 直接调用
+
 * 打开扫描界面
 ```java
 Intent intent = new Intent(this, CaptureActivity.class);
@@ -265,7 +266,7 @@ Intent intent = new Intent(this, CaptureActivity.class);
     }
 ```
 * 说明：REQUEST_CODE为int 类型的标识，result为扫描二维码获取的内容
-
- ### 文件下载
- ### PDA集成扫描头
+### 文件下载
+待续
+### PDA集成扫描头
 [PDA集成扫描头配置说明](./mds/MotoScan.md)
