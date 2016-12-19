@@ -266,7 +266,5 @@ Intent intent = new Intent(this, CaptureActivity.class);
     }
 ```
 * 说明：REQUEST_CODE为int 类型的标识，result为扫描二维码获取的内容
-### 文件下载
-待续
 ### PDA集成扫描头
 [PDA集成扫描头配置说明](./mds/MotoScan.md)
