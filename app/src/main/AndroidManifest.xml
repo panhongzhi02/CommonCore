@@ -44,6 +44,10 @@
                   android:theme="@style/Theme.Page">
 
         </activity>
+        <activity android:name=".activity.LogActivity"
+                  android:theme="@style/Theme.Page">
+
+        </activity>
 
         <!-- 照片浏览页面 -->
         <activity android:name="me.iwf.photopicker.PhotoPickerActivity"
@@ -55,7 +59,6 @@
                   android:theme="@style/Theme.Page">
 
         </activity>
-
 
     </application>
 

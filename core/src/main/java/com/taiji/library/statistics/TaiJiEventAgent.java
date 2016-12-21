@@ -2,6 +2,10 @@ package com.taiji.library.statistics;
 
 import android.content.Context;
 
+import com.blankj.utilcode.utils.TimeUtils;
+import com.taiji.library.greendao.bean.EventLog;
+import com.taiji.library.util.SystemUtil;
+
 import java.util.Map;
 
 /**
@@ -50,7 +54,15 @@ public class TaiJiEventAgent {
     }
 
     public void onEvent(String eventId, Map<String,String> map){
+        EventLog eventLog = getEventLog();
+    }
 
+    private EventLog getEventLog(){
+        EventLog eventLog = new EventLog();
+        eventLog.setClient("Android");
+        eventLog.setDeviceId(SystemUtil.getDeviceId(mContext));
+        eventLog.setTime(TimeUtils.getCurTimeString());
+        return eventLog;
     }
 
 }

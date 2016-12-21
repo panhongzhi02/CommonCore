@@ -77,6 +77,7 @@ public class Test2View extends BasePageView implements View.OnClickListener {
         mTest2s.add(new Test2("通用\n登录","com.taiji.app.activity.WebViewActivity"));
         mTest2s.add(new Test2("MVP\n测试","com.taiji.app.activity.MVPTestActivity"));
         mTest2s.add(new Test2("选择\n照片","com.taiji.app.activity.SelectPhotoActivity"));
+        mTest2s.add(new Test2("日志\n测试","com.taiji.app.activity.LogActivity"));
 
         mTestRv.setLayoutManager(new GridLayoutManager(mContext,4));
         Test2Adapter adapter = new Test2Adapter(mTest2s);
