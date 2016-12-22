@@ -94,8 +94,8 @@ public class DownloadActivity extends BaseActivity implements View.OnClickListen
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.download_btn:
-                String baseUrl = "http://10.6.66.130:8085/CubeCare/apk/";
-                String fileName = "CubeCare.apk";
+                String baseUrl = "http://192.168.1.13:8080/file/";
+                String fileName = "AndFix.apatch";
                 String fileStoreDir = Environment.getExternalStorageDirectory()
                         .getAbsolutePath() + File.separator + "CubeCare";
                 String fileStoreName = fileName;

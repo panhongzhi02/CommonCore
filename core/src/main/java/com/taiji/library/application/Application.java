@@ -28,8 +28,7 @@ public class Application extends android.app.Application{
         ZXingLibrary.initDisplayOpinion(this);
         //阿里热更新框架
         try {
-            version = getPackageManager().getApplicationInfo(getPackageName(), PackageManager.GET_META_DATA)
-                    .metaData.getString("andfix_version");
+            version = getPackageManager().getPackageInfo(getPackageName(), 0).versionName;
             mPatchManager = new PatchManager(this);
             mPatchManager.init(version);
             mPatchManager.loadPatch();

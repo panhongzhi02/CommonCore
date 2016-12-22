@@ -14,10 +14,6 @@
                  android:supportsRtl="true"
                  android:name=".application.Application"
         >
-        <meta-data
-            android:name="andfix_version"
-            android:value="1.0" >
-        </meta-data>
     </application>
 
 </manifest>
