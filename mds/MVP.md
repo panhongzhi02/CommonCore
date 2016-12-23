@@ -2,8 +2,10 @@
 ## 概念说明
 
 ## 项目结构
-### 说明图
-![说明图](./picture/MVP.png)
+### 基础说明图
+![说明图](./picture/BaseMVP.png)
+### 完整说明图
+![说明图](./picture/ComplateMVP.png)
 ### BasePresenter  基础业务处理器
 ```java
 public interface BasePresenter {
@@ -115,15 +117,15 @@ public interface XxxDataSource {
 public class XxxRepository implements XxxDataSource{
     //远程数据源
     @NonNull
-    private final TasksDataSource mTasksRemoteDataSource;
+    private final XxxDataSource mXxxRemoteDataSource;
     //本地数据源
     @NonNull
-    private final TasksDataSource mTasksLocalDataSource;
+    private final XxxDataSource mXxxLocalDataSource;
     
-    private TasksRepository(@NonNull TasksDataSource tasksRemoteDataSource,
-                            @NonNull TasksDataSource tasksLocalDataSource) {
-        mTasksRemoteDataSource = checkNotNull(tasksRemoteDataSource);
-        mTasksLocalDataSource = checkNotNull(tasksLocalDataSource);
+    private TasksRepository(@NonNull XxxDataSource xxxRemoteDataSource,
+                            @NonNull TasksDataSource xxxLocalDataSource) {
+        mXxxRemoteDataSource = checkNotNull(xxxRemoteDataSource);
+        mXxxLocalDataSource = checkNotNull(xxxsLocalDataSource);
     }
 }
 ```
