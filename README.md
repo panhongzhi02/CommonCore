@@ -270,3 +270,6 @@ Intent intent = new Intent(this, CaptureActivity.class);
 [PDA集成扫描头配置说明](./mds/MotoScan.md)
 ### AndFix热修补
 [AndFix热修补使用说明](./mds/AndFix.md)
+### MVP模式使用说明
+[MVP模式使用说明](./mds/MVP.md)
+
