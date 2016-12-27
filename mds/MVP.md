@@ -1,6 +1,7 @@
 # Android MVP模式在项目中应用
 ## 概念说明
-
+（先从百度抄些官方说明）MVP是从经典的模式MVC演变而来，它们的基本思想有想通的地方：Controller/Presenter负责逻辑处理，Model提供数据，View负责显示。
+（下面说自己的见解）
 ## 项目结构
 ### 基础说明图
 ![说明图](./picture/BaseMVP.png)

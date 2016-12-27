@@ -1,1 +1,1 @@
-include ':app', ':core'
+include ':app', ':core', ':cubecare4.0'

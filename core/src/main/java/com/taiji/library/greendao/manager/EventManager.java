@@ -39,6 +39,4 @@ public class EventManager extends BaseDBManager{
         dao.insert(eventLog);
     }
 
-
-
 }

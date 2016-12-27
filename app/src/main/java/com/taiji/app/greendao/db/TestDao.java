@@ -22,10 +22,10 @@ public class TestDao extends AbstractDao<Test, String> {
     /**
      * Properties of entity Test.<br/>
      * Can be used for QueryBuilder and for referencing column names.
-    */
+     */
     public static class Properties {
         public final static Property Id = new Property(0, String.class, "id", true, "ID");
-    };
+    }
 
 
     public TestDao(DaoConfig config) {
@@ -99,6 +99,11 @@ public class TestDao extends AbstractDao<Test, String> {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public boolean hasKey(Test entity) {
+        return entity.getId() != null;
     }
 
     @Override
