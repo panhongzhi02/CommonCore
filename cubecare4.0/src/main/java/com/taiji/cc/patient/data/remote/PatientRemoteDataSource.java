@@ -1,5 +1,7 @@
 package com.taiji.cc.patient.data.remote;
 
+import android.content.Context;
+
 import com.blankj.utilcode.utils.TimeUtils;
 import com.taiji.cc.patient.data.Patient;
 import com.taiji.cc.patient.data.PatientDataSource;
@@ -21,18 +23,22 @@ public class PatientRemoteDataSource implements PatientDataSource{
 
     private static PatientRemoteDataSource INSTANCE;
 
-    private String baseUrl = "http://192.168.1.13:8080/CubeCare/";
+    private Context mContext;
 
-    public static PatientRemoteDataSource getInstance(){
+    public PatientRemoteDataSource(Context context) {
+        mContext = context;
+    }
+
+    public static PatientRemoteDataSource getInstance(Context context){
         if(INSTANCE == null){
-            INSTANCE = new PatientRemoteDataSource();
+            INSTANCE = new PatientRemoteDataSource(context);
         }
         return INSTANCE;
     }
 
     @Override
-    public Observable<List<Patient>> getPatients(String area_id) {
-        PatientService service = HttpMethod.getInstance().getRetrofit(baseUrl).create(PatientService.class);
+    public Observable<List<Patient>> getPatients(String area_id) throws Exception {
+        PatientService service = HttpMethod.getInstance().getRetrofit(mContext).create(PatientService.class);
         L.d("patient","从服务器获取患者信息==============时间："+ TimeUtils.getCurTimeString());
         return service.getPatients(area_id);
     }

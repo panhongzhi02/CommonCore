@@ -61,7 +61,7 @@ public class PatientFragment extends BaseFragment implements PatientContract.Vie
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mPresenter = new PatientPresenter(
-                PatientRepository.getInstance(mActivity,PatientRemoteDataSource.getInstance(), PatientLocalDataSource.getInstance(mActivity)),
+                PatientRepository.getInstance(mActivity,PatientRemoteDataSource.getInstance(mActivity), PatientLocalDataSource.getInstance(mActivity)),
                 this,
                 SchedulerProvider.getInstance());
         mPatientAdapter = new PatientAdapter(new ArrayList<Patient>(0));

@@ -23,6 +23,12 @@ public abstract class BasePageView extends LinearLayout{
         this.mContext = context;
     }
 
+    public abstract void onResume();
+
+    public abstract void onPause();
+
+    public abstract void onDestory();
+
     /**
      * 传递参数
      * @param param

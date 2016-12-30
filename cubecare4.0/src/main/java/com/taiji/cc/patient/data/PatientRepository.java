@@ -60,7 +60,7 @@ public class PatientRepository implements PatientDataSource{
     }
 
     @Override
-    public Observable<List<Patient>> getPatients(String area_id) {
+    public Observable<List<Patient>> getPatients(String area_id) throws Exception {
         mCacheIsValid = CacheManager.getInstance(mContext).isValid("patient");
         if(mPatients!=null&&mCacheIsValid){
             return Observable.from(mPatients).toList();
@@ -85,7 +85,7 @@ public class PatientRepository implements PatientDataSource{
      * 本地获取患者列表
      * @return
      */
-    private Observable<List<Patient>> getAndCacheLocalPatient(String area_id) {
+    private Observable<List<Patient>> getAndCacheLocalPatient(String area_id) throws Exception {
         return mPatientLocalDataSource.getPatients(area_id).flatMap(new Func1<List<Patient>, Observable<List<Patient>>>() {
             @Override
             public Observable<List<Patient>> call(List<Patient> patients) {
@@ -97,10 +97,26 @@ public class PatientRepository implements PatientDataSource{
     }
 
     /**
+     * 获取本地数据
+     * @param area_id
+     * @return
+     */
+    public List<Patient> getLocalPatients(String area_id) throws Exception {
+        mPatientLocalDataSource.getPatients(area_id).doOnNext(new Action1<List<Patient>>() {
+            @Override
+            public void call(List<Patient> patients) {
+                mPatients.clear();
+                mPatients.addAll(patients);
+            }
+        });
+        return mPatients;
+    }
+
+    /**
      * 远程获取患者列表并保存到本地
      * @return
      */
-    private Observable<List<Patient>> getAndSaveRemotePatient(final String area_id) {
+    private Observable<List<Patient>> getAndSaveRemotePatient(final String area_id) throws Exception {
         return mPatientRemoteDataSource
                 .getPatients(area_id)
                 .flatMap(new Func1<List<Patient>, Observable<List<Patient>>>() {

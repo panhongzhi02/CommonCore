@@ -57,6 +57,8 @@ dependencies {
     compile 'com.android.support:design:24.2.1'
     //greendao orm
     compile 'org.greenrobot:greendao:3.2.0'
+    //事件总线
+    compile 'org.greenrobot:eventbus:3.0.0'
     //RecyclerView万能适配器
     compile 'com.github.CymChad:BaseRecyclerViewAdapterHelper:v2.0.0'
     //retrofit2网络请求依赖

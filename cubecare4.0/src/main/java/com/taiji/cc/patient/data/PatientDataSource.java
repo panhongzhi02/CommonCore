@@ -18,7 +18,7 @@ public interface PatientDataSource {
      * 获取患者列表
      * @return
      */
-    Observable<List<Patient>> getPatients(String area_id);
+    Observable<List<Patient>> getPatients(String area_id) throws Exception;
 
     /**
      * 获取单个患者信息

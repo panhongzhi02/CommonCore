@@ -33,8 +33,6 @@ public class PatientPresenter implements PatientContract.Presenter{
     @NonNull
     private CompositeSubscription mSubscription;
 
-    private boolean mFirstLoad = true;//是否首次加载
-
     public PatientPresenter(@NonNull PatientRepository patientRepository,
                             @NonNull PatientContract.View view,
                             @NonNull BaseSchedulerProvider schedulerProvider){
@@ -57,15 +55,20 @@ public class PatientPresenter implements PatientContract.Presenter{
 
     @Override
     public void loadPatientData(String area_id) {
-        loadPatientData(area_id,true);
+        try {
+            loadPatientData(area_id,true);
+        } catch (Exception e) {
+            e.printStackTrace();
+            mView.showError(e.getMessage());
+        }
     }
 
     /**
      *
-     * @param forceUpdate 是否强制更新
-     * @param showLoadingUI
+     * @param area_id 病区号
+     * @param showLoadingUI 是否显示加载进度条
      */
-    private void loadPatientData(final String area_id,final boolean showLoadingUI){
+    private void loadPatientData(final String area_id,final boolean showLoadingUI) throws Exception {
         mView.showLoadView(showLoadingUI);
         mSubscription.clear();
         Subscription subscription = mPatientRepository
@@ -73,12 +76,14 @@ public class PatientPresenter implements PatientContract.Presenter{
                 .flatMap(new Func1<List<Patient>, Observable<Patient>>() {
                     @Override
                     public Observable<Patient> call(List<Patient> patients) {
+                        //过程处理
                         return Observable.from(patients);
                     }
                 })
                 .filter(new Func1<Patient, Boolean>() {
                     @Override
                     public Boolean call(Patient patient) {
+                        //过滤操作
                         return true;
                     }
                 })
@@ -104,6 +109,12 @@ public class PatientPresenter implements PatientContract.Presenter{
                         mView.showError(e.getMessage());
                         mView.showLoadView(false);
                         mView.loadComplate();
+                        try {
+                            mView.showPatientList(mPatientRepository.getLocalPatients(area_id));
+                        } catch (Exception e1) {
+                            e1.printStackTrace();
+                            mView.showError(e.getMessage());
+                        }
                     }
 
                     @Override
